@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "created_at": "2023-07-18T05:57:04.000Z",
+        "order_status": "processing",
+        "payment_status": "paid",
+        "subtotal": 1998,
+        "total_payable_amount": 2158,
+        "shipping_charge": 140,
+        "discount": 20,
+        "tax": 0,
+        "shipping_info": {
+            "name": "Standard Shipping",
+            "est_delivery": "3-5 Business Days",
+            "rate": 10.20
+        },
+        "user": {
+            "id": 1,
+            "full_name": "Bharti",
+            "email": "bharti@gmail.com",
+            "phone": "9641234567",
+            "address": {},
+            "location": {
+                "address": "Bagdad, IQR",
+                "ip": "45.120.122.199",
+                "ip_score": 11,
+                "payment_attempts": 10,
+                "isBillingCountryMatched": true
+            }
+        },
+        "products": [
+            {
+                "id": "1",
+                "product_name": "Apple iPad 10.2 - inch Bionic chip rose (4th Generation)",
+                "image": "images/mobile.png",
+                "sku": 2345,
+                "price": 999,
+                "qty": 2,
+                "available_stock": 98
+            }
+        ],
+        "ManagementProduct": {
+            "vendor": "test",
+            "seller_id": "1458-6551145"
+        }
+    },
+    {
+        "id": 2,
+        "created_at": "2023-07-19T02:57:04.000Z",
+        "order_status": "Pending",
+        "payment_status": "Failed",
+        "subtotal": 999,
+        "total_payable_amount": 1159,
+        "shipping_charge": 140,
+        "discount": 20,
+        "tax": 0,
+        "shipping_info": {
+            "name": "Standard Shipping",
+            "est_delivery": "3-5 Business Days",
+            "rate": 10.20
+        },
+        "user": {
+            "id": 2,
+            "full_name": "Febar",
+            "email": "febar@gmail.com",
+            "phone": "9000234567",
+            "address": {},
+            "location": {
+                "address": "Kolkata, Ind",
+                "ip": "25.120.122.199",
+                "ip_score": 12,
+                "payment_attempts": 10,
+                "isBillingCountryMatched": true
+            }
+        },
+        "products": [
+            {
+                "id": "2",
+                "product_name": "Apple22 iPad 10.2 - inch Bionic chip rose ",
+                "image": "images/mobile.png",
+                "sku": 2342,
+                "price": 999,
+                "qty": 1,
+                "available_stock": 98
+            }
+        ],
+        "ManagementProduct": {
+            "vendor": "test",
+            "seller_id": "1258-6551000"
+        }
+    }
+]

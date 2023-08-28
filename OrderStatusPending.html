@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- All Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="DexignZone" />
+  <meta name="robots" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!-- Mobile Specific -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Title -->
+  <title>Admin Dashboard</title>
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+  <!-- Datatable -->
+  <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <!-- Custom Stylesheet -->
+  <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="css/font-stylesheet.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" rel="stylesheet" />
+  <link href="../../cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet" />
+  <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <!-- Pick date -->
+  <link rel="stylesheet" href="vendor/pickadate/themes/default.css" />
+  <link rel="stylesheet" href="vendor/pickadate/themes/default.date.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="EditShippingAddressPopup FraudAnalysismessage">
+    <div class="FraudAnalysismessageInner OrderDetails-EditShippingAddressPopup">
+      <a href="#" class="closeMessage">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+          <path
+            d="M19.5564 0.958855C18.9648 0.367274 18.0091 0.367274 17.4176 0.958855L10 8.36121L2.58248 0.943686C1.9909 0.352105 1.03527 0.352105 0.443686 0.943686C-0.147895 1.53527 -0.147895 2.4909 0.443686 3.08248L7.86125 10.5L0.443686 17.9175C-0.147895 18.5091 -0.147895 19.4647 0.443686 20.0563C1.03527 20.6479 1.9909 20.6479 2.58248 20.0563L10 12.6388L17.4176 20.0563C18.0091 20.6479 18.9648 20.6479 19.5564 20.0563C20.1479 19.4647 20.1479 18.5091 19.5564 17.9175L12.1388 10.5L19.5564 3.08248C20.1328 2.50607 20.1328 1.53527 19.5564 0.958855Z"
+            fill="black" />
+        </svg>
+      </a>
+      <div class="dFlx">
+        <div class="OrderDetails-EditShippingAddressPopupmap">
+          <div class="responsive-map-container">
+            <!-- place the iframe code between here... -->
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3433291.9705087417!2d38.91046739921348!3d32.823422975893415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s717%20Mills%20Gardens%2C%20Anbar-iraq!5e0!3m2!1sen!2sin!4v1689854254662!5m2!1sen!2sin"
+              width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- ... and here -->
+          </div>
+        </div>
+        <div class="OrderDetails-EditShippingAddressPopuptext">
+          <h3>Edit Shipping Address</h3>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Full Name <span>*</span> </label>
+              <input type="text" class="form-control" placeholder="Kishan Mendapara" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Town/City <span>*</span> </label>
+              <select class="form-control">
+                <option>Bagdad</option>
+                <option>Bagdad</option>
+                <option>Bagdad</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Street Name <span>*</span> </label>
+              <input type="text" class="form-control" placeholder="Al-Noor Street" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Building Type <span>*</span> </label>
+              <input type="text" class="form-control" placeholder="Apartment" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">House/Flat No <span>*</span> </label>
+              <input type="text" class="form-control" placeholder="C11" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nearby Landmark <span>*</span>
+              </label>
+              <input type="text" class="form-control" placeholder="Near Sallin Square" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mobile Phone Number <span>*</span>
+              </label>
+              <input type="text" id="mobile_code" class="form-control" placeholder="9857895626" />
+            </div>
+            <div class="savarea">
+              <h4>Save as :</h4>
+              <input type="radio" name="size" id="size_1" value="small" />
+              <label for="size_1">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.3125 16H2.6875C1.89488 16 1.25 15.3121 1.25 14.4665V6.39861C1.25 6.10405 1.47384 5.86523 1.75 5.86523C2.02616 5.86523 2.25 6.10405 2.25 6.39861V14.4665C2.25 14.7239 2.44625 14.9332 2.6875 14.9332H13.3125C13.5538 14.9332 13.75 14.7239 13.75 14.4665V6.39861C13.75 6.10405 13.9739 5.86523 14.25 5.86523C14.5262 5.86523 14.75 6.10405 14.75 6.39861V14.4665C14.75 15.312 14.1052 16 13.3125 16Z"
+                    fill="#3777BC" />
+                  <path
+                    d="M15.5 8.26529C15.372 8.26529 15.2441 8.21321 15.1465 8.10904L8.92806 1.47567C8.41635 0.929766 7.58369 0.929766 7.07194 1.47567L0.853556 8.10907C0.658305 8.31739 0.341711 8.31739 0.146461 8.10907C-0.0488204 7.90079 -0.0488204 7.56307 0.146461 7.35479L6.36484 0.721351C7.26647 -0.24045 8.73356 -0.24045 9.63516 0.721351L15.8535 7.35475C16.0488 7.56307 16.0488 7.90076 15.8535 8.10904C15.7559 8.21321 15.628 8.26529 15.5 8.26529Z"
+                    fill="#3777BC" />
+                  <path
+                    d="M10 15.9997H6C5.72384 15.9997 5.5 15.7609 5.5 15.4664V10.7327C5.5 9.81364 6.20094 9.06592 7.0625 9.06592H8.9375C9.79907 9.06592 10.5 9.81364 10.5 10.7327V15.4664C10.5 15.7609 10.2762 15.9997 10 15.9997ZM6.5 14.933H9.5V10.7327C9.5 10.4018 9.24766 10.1327 8.9375 10.1327H7.0625C6.75234 10.1327 6.5 10.4018 6.5 10.7327V14.933Z"
+                    fill="#3777BC" />
+                </svg>
+                Home
+              </label>
+              <input type="radio" name="size" id="size_2" value="small" />
+              <label for="size_2">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.4072 3.62837H10.9596V2.23915C10.9596 1.57767 10.4214 1.03955 9.75996 1.03955H6.24001C5.57853 1.03955 5.04038 1.57767 5.04038 2.23915V3.62837H1.5928C0.714507 3.62837 0 4.34291 0 5.22117V13.3678C0 14.2461 0.714507 14.9606 1.5928 14.9606H14.4072C15.2855 14.9606 16 14.2461 16 13.3678V5.22117C16 4.34291 15.2855 3.62837 14.4072 3.62837ZM6.05648 2.23915C6.05648 2.13795 6.13881 2.05565 6.24001 2.05565H9.75996C9.86116 2.05565 9.94349 2.13798 9.94349 2.23915V3.62837H6.05648V2.23915ZM1.0161 5.22117C1.0161 4.90316 1.27479 4.64447 1.5928 4.64447H14.4072C14.7252 4.64447 14.9839 4.90316 14.9839 5.22117V5.97311C14.9839 6.67841 14.511 7.30868 13.8338 7.50583L8.5201 9.05293C8.17987 9.15204 7.82017 9.15204 7.47987 9.05293L2.16619 7.5058C1.48903 7.30865 1.0161 6.67841 1.0161 5.97311V5.22117ZM14.4072 13.9445H1.5928C1.27482 13.9445 1.0161 13.6858 1.0161 13.3679V8.04179C1.27212 8.23968 1.56396 8.38876 1.88213 8.48141C7.75196 10.1904 7.45028 10.1434 7.99998 10.1434C8.55696 10.1434 8.24115 10.1924 14.1178 8.48141C14.436 8.38876 14.7279 8.23968 14.9839 8.04179V13.3678C14.9839 13.6858 14.7252 13.9445 14.4072 13.9445Z"
+                    fill="#3777BC" />
+                </svg>
+                Work
+              </label>
+            </div>
+            <div class="dFlx">
+              <input class="ShippingAddressbtn" type="submit" name="" value="Update Shipping Address" />
+              <input class="ShippingAddressCancelbtn" type="submit" name="" value="Cancel" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="FraudAnalysispopup FraudAnalysismessage">
+    <div class="FraudAnalysismessageInner">
+      <a href="#" class="closeMessage">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+          <path
+            d="M19.5564 0.958855C18.9648 0.367274 18.0091 0.367274 17.4176 0.958855L10 8.36121L2.58248 0.943686C1.9909 0.352105 1.03527 0.352105 0.443686 0.943686C-0.147895 1.53527 -0.147895 2.4909 0.443686 3.08248L7.86125 10.5L0.443686 17.9175C-0.147895 18.5091 -0.147895 19.4647 0.443686 20.0563C1.03527 20.6479 1.9909 20.6479 2.58248 20.0563L10 12.6388L17.4176 20.0563C18.0091 20.6479 18.9648 20.6479 19.5564 20.0563C20.1479 19.4647 20.1479 18.5091 19.5564 17.9175L12.1388 10.5L19.5564 3.08248C20.1328 2.50607 20.1328 1.53527 19.5564 0.958855Z"
+            fill="black" />
+        </svg>
+      </a>
+      <h3>Fraud Analysis</h3>
+      <ul class="dataHolder">
+        <li>This order was placed from IP Address: 45.120.122.109</li>
+        <li>The IP Score is -11</li>
+        <li>There was 5 payment attempt</li>
+        <li>Location of IP address used to place order is Bagdad, IQ</li>
+        <li>
+          Billing country matches the country from which the order was placed
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <!--*******************
+        Preloader start
+    ********************-->
+  <div id="preloader">
+    <div class="sk-three-bounce">
+      <div class="sk-child sk-bounce1"></div>
+      <div class="sk-child sk-bounce2"></div>
+      <div class="sk-child sk-bounce3"></div>
+    </div>
+  </div>
+  <!--*******************
+        Preloader end
+    ********************-->
+  <!--**********************************
+        Main wrapper start
+    ***********************************-->
+  <div id="main-wrapper">
+    <!--**********************************
+            Nav header start
+        ***********************************-->
+    <div class="nav-header">
+      <a href="index.html" class="brand-logo">
+        <img class="logo-abbr" src="images/logo.png" alt="" />
+        <img class="logo-compact" src="images/logo-text.png" alt="" />
+        <img class="brand-title" src="images/logo-text.png" alt="" />
+      </a>
+      <div class="nav-control">
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </div>
+    <!--**********************************
+            Nav header end
+        ***********************************-->
+    <!--**********************************
+            Header start
+        ***********************************-->
+    <div class="header">
+      <div class="header-content">
+        <nav class="navbar navbar-expand">
+          <div class="collapse navbar-collapse justify-content-between">
+            <form class="HeaderSearch" id="HeadSearch">
+              <div class="header-left">
+                <div class="input-group search-area">
+                  <input type="text" class="form-control" placeholder="Search here..." />
+                  <span class="input-group-text">
+                    <a href="javascript:void(0)">
+                      <i class="flaticon-381-search-2"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav header-right">
+              <li class="nav-item dropdown header-profile">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                  <div class="userImage">
+                    <img src="images/profile/pic1.jpg" width="50" alt="" />
+                  </div>
+                  <div class="UserInfo">
+                    <span class="UserName">Eren Yeager</span>
+                    <span class="UserPer">Super Admin</span>
+                  </div>
+                  <span class="iconuser">
+                    <img src="images/down-icon.png" alt="#" />
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="app-profile.html" class="dropdown-item ai-icon">
+                    <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="ms-2">Profile </span>
+                  </a>
+                  <a href="email-inbox.html" class="dropdown-item ai-icon">
+                    <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="ms-2">Inbox </span>
+                  </a>
+                  <a href="page-login.html" class="dropdown-item ai-icon">
+                    <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                      <polyline points="16 17 21 12 16 7"></polyline>
+                      <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span class="ms-2">Logout </span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+    <!--**********************************
+            Sidebar start
+        ***********************************-->
+    <div class="deznav">
+      <div class="copyright">
+        <p>© 2023 All Rights Reserved. Hanooot</p>
+      </div>
+      <div class="deznav-scroll">
+        <ul class="metismenu" id="menu">
+          <li>
+            <a class="ai-icon" href="index.html" aria-expanded="false">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.23077 14.0385C10.2388 14.0385 10.4615 15.7369 10.4615 19.2692C10.4615 21.0391 10.4615 22.2981 9.71815 23.22C8.86276 24.2821 7.30584 24.5 5.23077 24.5C3.15569 24.5 1.59877 24.2821 0.743384 23.22C0 22.2981 0 21.0403 0 19.3L0.923076 19.2692H0C0 15.7369 0.222769 14.0385 5.23077 14.0385ZM18.7692 14.0385C23.7772 14.0385 24 15.7369 24 19.2692C24 21.0391 24 22.2981 23.2566 23.22C22.4012 24.2821 20.8443 24.5 18.7692 24.5C16.6941 24.5 15.1372 24.2821 14.2818 23.22C13.5385 22.2981 13.5385 21.0403 13.5385 19.3L14.4615 19.2692H13.5385C13.5385 15.7369 13.7612 14.0385 18.7692 14.0385ZM5.4845 15.8852L5.23077 15.8846C2.01972 15.8846 1.85505 16.115 1.84661 18.8102L1.84713 19.8602C1.85296 20.9322 1.8938 21.7065 2.17969 22.0631C2.50584 22.4668 3.47446 22.6538 5.23077 22.6538C6.98707 22.6538 7.95569 22.4655 8.28184 22.0618C8.61538 21.6471 8.61538 20.6624 8.61538 19.2988C8.61538 16.2216 8.61538 15.8996 5.4845 15.8852ZM19.023 15.8852L18.7692 15.8846C15.5582 15.8846 15.3935 16.115 15.3851 18.8102L15.3856 19.8602C15.3914 20.9322 15.4323 21.7065 15.7181 22.0631C16.0443 22.4668 17.0129 22.6538 18.7692 22.6538C20.5255 22.6538 21.4941 22.4655 21.8203 22.0618C22.1538 21.6471 22.1538 20.6624 22.1538 19.2988C22.1538 16.2216 22.1538 15.8996 19.023 15.8852ZM5.23077 0.5C10.2388 0.5 10.4615 2.19846 10.4615 5.73077C10.4615 7.50061 10.4615 8.75969 9.71815 9.68153C8.86276 10.7437 7.30584 10.9615 5.23077 10.9615C3.15569 10.9615 1.59877 10.7437 0.743384 9.68153C0 8.75969 0 7.50184 0 5.76154L0.923076 5.73077H0C0 2.19846 0.222769 0.5 5.23077 0.5ZM18.7692 0.5C23.7772 0.5 24 2.19846 24 5.73077C24 7.50061 24 8.75969 23.2566 9.68153C22.4012 10.7437 20.8443 10.9615 18.7692 10.9615C16.6941 10.9615 15.1372 10.7437 14.2818 9.68153C13.5385 8.75969 13.5385 7.50184 13.5385 5.76154L14.4615 5.73077H13.5385C13.5385 2.19846 13.7612 0.5 18.7692 0.5ZM5.4845 2.3467L5.23077 2.34615C2.01972 2.34615 1.85505 2.57657 1.84661 5.27175L1.84713 6.32176C1.85296 7.39371 1.8938 8.16804 2.17969 8.52461C2.50584 8.9283 3.47446 9.11538 5.23077 9.11538C6.98707 9.11538 7.95569 8.92707 8.28184 8.52338C8.61538 8.10861 8.61538 7.124 8.61538 5.7603C8.61538 2.68313 8.61538 2.36119 5.4845 2.3467ZM19.023 2.3467L18.7692 2.34615C15.5582 2.34615 15.3935 2.57657 15.3851 5.27175L15.3856 6.32176C15.3914 7.39371 15.4323 8.16804 15.7181 8.52461C16.0443 8.9283 17.0129 9.11538 18.7692 9.11538C20.5255 9.11538 21.4941 8.92707 21.8203 8.52338C22.1538 8.10861 22.1538 7.124 22.1538 5.7603C22.1538 2.68313 22.1538 2.36119 19.023 2.3467Z"
+                  fill="#111111" />
+              </svg>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a class="ai-icon" href="order.html" aria-expanded="false">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M22.3379 7.09294L22.3556 7.12364C22.4287 7.24992 22.4581 7.38947 22.4485 7.5248C22.4496 7.54495 22.4502 7.5652 22.4502 7.58559V22.846C22.4502 23.758 21.7082 24.5 20.7962 24.5H3.20379C2.29179 24.5 1.5498 23.758 1.5498 22.846V7.64133C1.5498 7.49592 1.57605 7.35656 1.62382 7.22761C1.63938 7.17122 1.66141 7.11572 1.69198 7.06265L5.08526 1.1758C5.32569 0.758891 5.77381 0.5 6.25489 0.5H17.7457C18.226 0.5 18.6738 0.758282 18.9143 1.17406L22.2532 6.94654C22.2849 6.993 22.3133 7.04189 22.3379 7.09294ZM17.713 1.90677H12.7275V6.4477H20.3395L17.713 1.90677ZM11.3207 1.90677H6.28766L3.67015 6.4477H11.3207V1.90677ZM20.7962 23.0932C20.9325 23.0932 21.0434 22.9823 21.0434 22.846V7.85447H2.95657V22.846C2.95657 22.9823 3.06748 23.0932 3.20379 23.0932H20.7962ZM14.1981 13.1575C14.4728 12.8829 14.9182 12.8829 15.1928 13.1575C15.4675 13.4322 15.4675 13.8776 15.1928 14.1523L11.5548 17.7903C11.4175 17.9277 11.2374 17.9964 11.0574 17.9964C10.8775 17.9964 10.6974 17.9277 10.5601 17.7903L8.85494 16.0853C8.58025 15.8106 8.58025 15.3652 8.85494 15.0906C9.12963 14.8159 9.57504 14.8159 9.84968 15.0906L11.0574 16.2982L14.1981 13.1575Z"
+                  fill="#3777BC" />
+              </svg>
+              <span class="nav-text">Orders</span>
+            </a>
+          </li>
+          <li>
+            <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_691_13276)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.49492 6.7261L13.3151 1.90624H5.17187V17.0687H8.28418V7.22873V7.22815C8.28418 7.22749 8.28418 7.22684 8.28418 7.22619C8.28472 7.03027 8.36528 6.85326 8.49492 6.7261ZM9.69077 7.93127V23.0937H18.8282V7.93127H15.0143C15.0138 7.93127 15.0133 7.93127 15.0128 7.93127H15.0125L9.69077 7.93127ZM15.716 6.52502H19.531C19.9194 6.52502 20.2341 6.83967 20.2341 7.22815V23.7969C20.2341 24.1853 19.9194 24.5 19.531 24.5H8.9873C8.59883 24.5 8.28418 24.1853 8.28418 23.7969V18.475H4.46875C4.08027 18.475 3.76562 18.1603 3.76562 17.7718V1.20312C3.76562 0.814647 4.08027 0.5 4.46875 0.5H15.0124C15.0129 0.5 15.0133 0.5 15.0138 0.500001C15.104 0.500115 15.195 0.517586 15.2818 0.553414C15.5444 0.662398 15.716 0.918686 15.716 1.2031V6.52502ZM14.3094 6.52503V2.90079L10.6851 6.52503H14.3094ZM11.5028 18.8722C11.2282 19.1468 11.2282 19.5919 11.5028 19.8665C11.6399 20.0039 11.8199 20.0725 11.9999 20.0725L12.0003 20.0728C12.1803 20.0728 12.3599 20.0043 12.4974 19.8668L14.2594 18.1048L16.0214 19.8668C16.2963 20.1414 16.7414 20.1414 17.016 19.8668C17.2905 19.5919 17.2905 19.1468 17.016 18.8722L15.2536 17.1102L16.3536 16.0098C16.9133 15.4502 17.2216 14.7063 17.2216 13.9149C17.2216 13.1235 16.9133 12.3796 16.3536 11.8203C15.7943 11.261 15.05 10.9526 14.259 10.9526C13.468 10.9526 12.7238 11.2606 12.1644 11.8203C11.0096 12.9752 11.0092 14.8546 12.1644 16.0098L13.2648 17.1102L11.5028 18.8722ZM13.1587 15.0153C12.5519 14.4085 12.5519 13.4213 13.1587 12.8145C13.4526 12.5202 13.8435 12.3585 14.259 12.3585H14.2587C14.6742 12.3585 15.0652 12.5206 15.3591 12.8145C15.653 13.1084 15.815 13.4993 15.815 13.9149C15.815 14.3304 15.6533 14.7214 15.3591 15.0153L14.259 16.1157L13.1587 15.0153Z"
+                    fill="#111111" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_691_13276">
+                    <rect width="24" height="24" fill="white" transform="translate(0 0.5)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="nav-text">Product Management</span>
+            </a>
+            <ul aria-expanded="false">
+              <li>
+                <a href="https://davur.dexignzone.com/websitetemplate/xhtml/index.html" target="_blank">Categories</a>
+              </li>
+              <li>
+                <a href="https://davur.dexignzone.com/websitetemplate/xhtml/about-us.html" target="_blank">Hanooot
+                  Products</a>
+              </li>
+              <li>
+                <a href="https://davur.dexignzone.com/websitetemplate/xhtml/blog-list.html" target="_blank">Seller
+                  Products</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="ai-icon" href="javascript:void()" aria-expanded="false">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_691_13288)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.5615 3.3598C15.5615 4.1112 15.2648 4.79366 14.7835 5.29845C16.0927 6.03528 16.9677 7.4405 16.9677 9.03134V9.73442C16.9677 10.1225 16.6527 10.4375 16.2647 10.4375H9.18696C8.79889 10.4375 8.48389 10.1225 8.48389 9.73442V9.03134C8.48389 7.40863 9.40821 6.02497 10.6939 5.30408C10.1755 4.7758 9.89004 4.08819 9.89004 3.3598C9.89004 1.80974 11.1992 0.50061 12.7492 0.50061C14.311 0.50061 15.5615 1.81208 15.5615 3.3598ZM14.1554 3.35984C14.1554 2.57239 13.5114 1.90681 12.7492 1.90681C11.9754 1.90681 11.2962 2.58599 11.2962 3.35984C11.2962 4.12199 11.9618 4.766 12.7492 4.766C13.5245 4.766 14.1554 4.13511 14.1554 3.35984ZM12.7492 6.17216C11.1992 6.17216 9.89004 7.48128 9.89004 9.03134H15.5615C15.5615 7.45456 14.2998 6.17216 12.7492 6.17216ZM20.346 12.5153C21.1785 11.6219 22.4468 11.6787 23.2493 12.34C24.1286 13.0661 24.2322 14.3452 23.5774 15.2176L20.2021 19.7182C19.2778 20.951 17.8055 21.6868 16.2648 21.6868H7.95628C7.98394 22.4827 7.55742 23.2646 6.79106 23.6475L5.23631 24.4251C4.88897 24.5985 4.46667 24.4579 4.29277 24.1106L0.0742503 15.6736C-0.0991403 15.3262 0.0414378 14.9039 0.388782 14.73L1.94353 13.9529C2.55619 13.6468 3.2677 13.6548 3.87703 13.9773L5.23256 12.7839C7.08028 11.1579 9.864 11.1528 11.7173 12.7685C11.7823 12.8185 11.8402 12.8637 11.8925 12.9045C12.2318 13.1696 12.3345 13.2498 12.577 13.2498H16.2649C17.2103 13.2498 18.0122 13.8751 18.2794 14.7338L20.346 12.5153ZM5.23627 22.853L6.162 22.3899C6.50934 22.216 6.64997 21.7941 6.47653 21.4468L3.51563 15.525C3.34172 15.1772 2.91989 15.0371 2.57255 15.2105L1.64634 15.6736L5.23627 22.853ZM19.0772 18.8745L22.4524 14.3738C22.6667 14.0888 22.6366 13.6721 22.3582 13.4284C22.092 13.1954 21.658 13.1701 21.3749 13.4739L18.2794 16.7967C17.882 17.2236 17.3195 17.4683 16.7359 17.4683H12.674C12.2859 17.4683 11.9709 17.1533 11.9709 16.7653C11.9709 16.3772 12.2858 16.0622 12.674 16.0622H16.2648C16.6524 16.0622 16.9679 15.7467 16.9679 15.3591C16.9679 14.9715 16.6525 14.656 16.2648 14.656H12.5769C12.0716 14.656 11.5865 14.5262 10.8066 13.8395C9.48244 12.6747 7.48566 12.6747 6.16153 13.8395L4.83084 15.0108L7.46555 20.2806H16.2649C17.3654 20.2806 18.4168 19.7552 19.0772 18.8745Z"
+                    fill="#111111" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_691_13288">
+                    <rect width="24" height="24" fill="white" transform="translate(0 0.5)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="nav-text">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M1.39961 5.00585H13.1954C13.5638 6.70745 15.0792 7.98665 16.8894 7.98665C18.6996 7.98665 20.215 6.70745 20.5834 5.00585H22.9488C23.3906 5.00585 23.7488 4.64765 23.7488 4.20585C23.7488 3.76405 23.3906 3.40585 22.9488 3.40585H20.5834C20.215 1.70425 18.6996 0.425049 16.8894 0.425049C15.0792 0.425049 13.5638 1.70425 13.1954 3.40585H1.39961C0.957809 3.40585 0.599609 3.76405 0.599609 4.20585C0.599609 4.64765 0.957809 5.00585 1.39961 5.00585ZM16.8894 2.02505C18.092 2.02505 19.0702 3.00345 19.0702 4.20585C19.0702 5.40825 18.0918 6.38665 16.8894 6.38665C15.687 6.38665 14.7086 5.40825 14.7086 4.20585C14.7086 3.00345 15.6868 2.02505 16.8894 2.02505ZM22.9488 11.625H11.153C10.7846 9.92336 9.26921 8.64417 7.45901 8.64417C5.64881 8.64417 4.13341 9.92336 3.76501 11.625H1.39961C0.957809 11.625 0.599609 11.9832 0.599609 12.425C0.599609 12.8668 0.957809 13.225 1.39961 13.225H3.76501C4.13341 14.9266 5.64881 16.2058 7.45901 16.2058C9.26921 16.2058 10.7846 14.9266 11.153 13.225H22.9488C23.3906 13.225 23.7488 12.8668 23.7488 12.425C23.7488 11.9832 23.3906 11.625 22.9488 11.625ZM7.45901 14.6058C6.25641 14.6058 5.27821 13.6274 5.27821 12.425C5.27821 11.2226 6.25661 10.2442 7.45901 10.2442C8.66141 10.2442 9.63981 11.2224 9.63981 12.425C9.63981 13.6276 8.66161 14.6058 7.45901 14.6058ZM20.5834 19.8442H22.9488C23.3906 19.8442 23.7488 20.2024 23.7488 20.6442C23.7488 21.086 23.3906 21.4442 22.9488 21.4442H20.5834C20.215 23.1458 18.6996 24.425 16.8894 24.425C15.0792 24.425 13.5638 23.1458 13.1954 21.4442H1.39961C0.957809 21.4442 0.599609 21.086 0.599609 20.6442C0.599609 20.2024 0.957809 19.8442 1.39961 19.8442H13.1954C13.5638 18.1426 15.0792 16.8634 16.8894 16.8634C18.6996 16.8634 20.215 18.1426 20.5834 19.8442ZM14.7086 20.6442C14.7086 21.8466 15.6868 22.825 16.8894 22.825C18.092 22.825 19.0702 21.8466 19.0702 20.6442C19.0702 19.4418 18.0918 18.4634 16.8894 18.4634C15.687 18.4634 14.7086 19.4418 14.7086 20.6442Z"
+                  fill="#111111" />
+              </svg>
+              <span class="nav-text">Settings</span>
+            </a>
+            <ul aria-expanded="false">
+              <li>
+                <a href="app-profile.html">User Roles / HR</a>
+              </li>
+              <li>
+                <a href="post-details.html">Financial Settings</a>
+              </li>
+              <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">Preferences</a>
+                <ul aria-expanded="false">
+                  <li>
+                    <a href="email-compose.html">Sub Menu 1</a>
+                  </li>
+                  <li>
+                    <a href="email-inbox.html">Sub Menu 2</a>
+                  </li>
+                  <li>
+                    <a href="email-read.html">Sub Menu 3</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="post-details.html">General Settings</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <div class="copyright"><p><strong>Davur - Restaurant Admin Dashboard</strong> ©2023 All Rights Reserved</p><p>Made with <span class="heart"></span> by DexignZone</p></div> -->
+      </div>
+    </div>
+    <!--**********************************
+            Sidebar end
+        ***********************************-->
+    <!--**********************************
+            Content body start
+        ***********************************-->
+    <div class="content-body">
+      <div class="container-fluid">
+        <div class="detailsLoader" style="height: 300px;">
+          <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+          </div>
+        </div>
+        <div class="orderDetailsWrap">
+          <div class="OrderDeataildHead">
+            <h6>
+              Orders
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.17869 12.3433C2.94897 12.1267 2.94041 11.7644 3.15641 11.5358L7.92737 6.49971L3.15643 1.46416C2.93985 1.23558 2.94899 0.873854 3.17872 0.656711C3.40786 0.439567 3.76959 0.44927 3.98673 0.678437L9.12971 6.10714C9.23372 6.21685 9.28629 6.35857 9.28629 6.49971C9.28629 6.64084 9.23372 6.78313 9.12971 6.89286L3.98673 12.3216C3.76956 12.5507 3.40786 12.5604 3.17869 12.3433Z"
+                  fill="#78828A" />
+              </svg>
+              <span class="hambOrderID">#569874569852</span>
+            </h6>
+          </div>
+          <div class="OrderDeataildWrap">
+            <div class="OrderDeataildWrapLeft">
+              <div class="row">
+                <div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
+                  <div class="cardInner">
+                    <div class="cardInnerStatustext">
+                      <h5>
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.48864 0C11.8853 0 13.8652 1.82617 14.1093 4.16178L14.1774 4.16258C15.507 4.16258 17.1235 5.04556 17.669 7.52214L18.3925 13.1217C18.652 14.9289 18.3274 16.3786 17.426 17.4183C16.5293 18.4526 15.1099 19 13.321 19H5.66669C3.70175 19 2.33281 18.5186 1.481 17.5293C0.625522 16.5372 0.339447 15.049 0.631024 13.107L1.34254 7.58173C1.81017 5.04832 3.5202 4.16258 4.84422 4.16258C4.95852 3.10857 5.43379 2.10587 6.18777 1.35427C7.05425 0.493297 8.24898 0 9.46938 0H9.48864ZM14.1774 5.53795H4.84422C4.43986 5.53795 3.08834 5.70115 2.70049 7.79537L1.99263 13.2968C1.76249 14.84 1.94037 15.9568 2.52261 16.6325C3.09751 17.3001 4.12628 17.6246 5.66669 17.6246H13.321C14.282 17.6246 15.5941 17.433 16.3863 16.5179C17.0153 15.7927 17.2317 14.7125 17.0299 13.3069L16.3157 7.75778C16.0113 6.39067 15.208 5.53795 14.1774 5.53795ZM12.1628 8.09071C12.5424 8.09071 12.8716 8.39879 12.8716 8.77839C12.8716 9.15799 12.5846 9.46607 12.205 9.46607H12.1628C11.7832 9.46607 11.4751 9.15799 11.4751 8.77839C11.4751 8.39879 11.7832 8.09071 12.1628 8.09071ZM6.81713 8.09071C7.19673 8.09071 7.5259 8.39879 7.5259 8.77839C7.5259 9.15799 7.23799 9.46607 6.85839 9.46607H6.81713C6.43753 9.46607 6.12945 9.15799 6.12945 8.77839C6.12945 8.39879 6.43753 8.09071 6.81713 8.09071ZM9.48589 1.37536H9.47213C8.60932 1.37536 7.76852 1.72287 7.15877 2.32895C6.66208 2.82341 6.33724 3.47343 6.23216 4.16215L12.7232 4.16241C12.4876 2.58695 11.1252 1.37536 9.48589 1.37536Z"
+                            fill="#111111" />
+                        </svg>
+                        Order Status
+                      </h5>
+                    </div>
+                    <div class="cardInnerStatusbtn orderStatusBTN">
+                      <a href="#" class="">Pending</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
+                  <div class="cardInner">
+                    <div class="cardInnerStatustext">
+                      <h5>
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.20957 1.69995C3.74667 1.69995 1.75 3.69662 1.75 6.15952V13.2845C1.75 15.7474 3.74667 17.744 6.20957 17.744H14.7902C17.2532 17.744 19.2498 15.7474 19.2498 13.2845V6.15952C19.2498 3.69662 17.2532 1.69995 14.7902 1.69995H6.20957ZM0.25 6.15952C0.25 2.86819 2.91824 0.199951 6.20957 0.199951H14.7902C18.0816 0.199951 20.7498 2.86819 20.7498 6.15952V13.2845C20.7498 16.5758 18.0816 19.244 14.7902 19.244H6.20957C2.91824 19.244 0.25 16.5758 0.25 13.2845V6.15952ZM5.50273 4.70519C5.08852 4.70519 4.75273 5.04098 4.75273 5.45519C4.75273 5.86941 5.08852 6.20519 5.50273 6.20519H10.8625C11.2767 6.20519 11.6125 5.86941 11.6125 5.45519C11.6125 5.04098 11.2767 4.70519 10.8625 4.70519H5.50273Z"
+                            fill="#111111" />
+                        </svg>
+                        Payment Status
+                      </h5>
+                    </div>
+                    <div class="cardInnerStatusbtn paymentStatusBTN">
+                      <a href="#" class="Failed_btn_color">Failed</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12">
+                  <div class="OrderFullDetails">
+                    <div class="OrderFullDetailshead">
+                      <div class="OrderFullDetailsheadLeft">
+                        <div class="OrderFullDetailsIDADTE">
+                          <span class="IDNumber">Order ID : #569874569852</span>
+                          <span class="IDDATE">10/07/2023 09:21 AM</span>
+                        </div>
+                        <div class="SellerID">
+                          Seller ID : <span># 1458-6551145</span>
+                        </div>
+                      </div>
+                      <div class="OrderFullDetailsheadRight"></div>
+                    </div>
+                    <div class="OrderTable">
+                      <div class="OrderTablehead">
+                        <div class="OrderTableheadCol1">Product Details</div>
+                        <div class="OrderTableheadCol2">Quantity</div>
+                        <div class="OrderTableheadCol3">Amount</div>
+                      </div>
+                      <div class="OrderTablebody">
+                        <div class="OrderTablebodyLoop">
+                          <div class="OrderTablebodyCol1">
+                            <div class="productWrap">
+                              <div class="ProductImage">
+                                <img src="images/mobile.png" alt="#" />
+                              </div>
+                              <div class="ProductDetails">
+                                <h5>
+                                  Apple iPad 10.2 - inch Bionic chip rose (4th
+                                  Generation)
+                                </h5>
+                                <span>Color: Red</span>
+                                <span>$999</span>
+                                <span>SKU: 2345</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="OrderTablebodyCol2">
+                            <span class="Quantity">2</span>
+                            <span class="AvaliableStock">Avaliable Stock: 100</span>
+                          </div>
+                          <div class="OrderTablebodyCol3">
+                            <span class="amount">$1998.00</span>
+                          </div>
+                        </div>
+                        <div class="OrderTablebodyLoop">
+                          <div class="OrderTablebodyCol1">
+                            <div class="productWrap">
+                              <div class="ProductImage">
+                                <img src="images/mobile.png" alt="#" />
+                              </div>
+                              <div class="ProductDetails">
+                                <h5>
+                                  Apple iPad 10.2 - inch Bionic chip rose (4th
+                                  Generation)
+                                </h5>
+                                <span>Color: Red</span>
+                                <span>$999</span>
+                                <span>SKU: 2345</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="OrderTablebodyCol2">
+                            <span class="Quantity">2</span>
+                            <span class="AvaliableStock">Avaliable Stock: 100</span>
+                          </div>
+                          <div class="OrderTablebodyCol3">
+                            <span class="amount">$1998.00</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="OrderTableFootertotalBrake clearfix" id="panel">
+                        <div class="OrderTableFootertotalBrakeLeft"></div>
+                        <div class="OrderTableFootertotalBrakeRight">
+                          <div class="OrderTableFootertotalBrakeRightrow subtotal_col">
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakelabel">Subtotal</span>
+                            </div>
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakeamount">$2997.00</span>
+                            </div>
+                          </div>
+                          <div class="OrderTableFootertotalBrakeRightrow shipping_col">
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakelabel">Shipping</span>
+                            </div>
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakeamount">$140.00</span>
+                            </div>
+                          </div>
+                          <div class="OrderTableFootertotalBrakeRightrow discount_col">
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakelabel">Discount</span>
+                            </div>
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakeamount">$20.00</span>
+                            </div>
+                          </div>
+                          <div class="OrderTableFootertotalBrakeRightrow tax_col">
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakelabel">Tax</span>
+                            </div>
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakeamount">$0.00</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="OrderTableFooter">
+                        <div class="OrderTableFootertotalBrakeLeft">
+                          <div id="flip" class="clickon">[Show More]</div>
+                        </div>
+                        <div class="OrderTableFootertotalBrakeRight">
+                          <div class="OrderTableFootertotalBrakeRightrow">
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakelabel">Order Total</span>
+                            </div>
+                            <div class="OrderTableFootertotalBrakeRightcol">
+                              <span class="brakeamount order_total">$2997.00</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" id="TabShipping">
+                <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12">
+                  <div class="OrderFullDetails">
+                    <div class="card-body">
+                      <!-- Nav tabs -->
+                      <div class="custom-tab-1">
+                        <ul class="nav nav-tabs">
+                          <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#Shipping">Shipping</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Payment">Payment</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Return">Return/Refund
+                            </a>
+                          </li>
+                        </ul>
+                        <div class="tab-content">
+                          <div class="tab-pane fade show active" id="Shipping" role="tabpanel">
+                            <div class="">
+                              <h4>Shipping Details</h4>
+                              <div class="ShippingDetailsWrap">
+                                <div class="ShippingDetailsWrapCol">
+                                  <span>SHIPPING NAME</span>
+                                  <h5 class="shipping_name">Standard Shipping</h5>
+                                </div>
+                                <div class="ShippingDetailsWrapCol">
+                                  <span>ESTIMATED DELIVERY TIME</span>
+                                  <h5 class="shipping_delivery">3-5 Business Days</h5>
+                                </div>
+                                <div class="ShippingDetailsWrapCol">
+                                  <span>SHIPPING RATE</span>
+                                  <h5 class="shipping_price">$10.20</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="Payment">
+                            <div class="PaymentfailedWrap">
+                              <span>
+                                <svg width="27" height="27" viewBox="0 0 27 27" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_599_28269)">
+                                    <path
+                                      d="M26.4602 19.6725L17.001 3.28838C15.456 0.581771 11.5489 0.581771 10.0094 3.28838L0.544616 19.6725C-1.00043 22.3791 0.922541 25.7416 4.04042 25.7416H22.9311C26.049 25.7416 28.0053 22.3458 26.4602 19.6725ZM13.4997 22.1068C12.6771 22.1068 11.9935 21.4232 11.9935 20.6007C11.9935 19.7781 12.6771 19.0945 13.4997 19.0945C14.3222 19.0945 15.0058 19.7781 14.9724 20.6396C15.0114 21.4232 14.2888 22.1068 13.4997 22.1068ZM14.8724 12.3697C14.8057 13.5368 14.7335 14.6984 14.6668 15.8655C14.6334 16.2434 14.6334 16.588 14.6334 16.9604C14.6001 17.5773 14.1166 18.0552 13.4997 18.0552C12.8827 18.0552 12.4048 17.6106 12.3659 16.9937C12.2658 15.1763 12.1602 13.3923 12.0602 11.5749C12.0269 11.097 11.9935 10.6134 11.9546 10.1355C11.9546 9.34629 12.3992 8.69604 13.1217 8.4904C13.8442 8.31811 14.5612 8.66269 14.8724 9.34629C14.978 9.58527 15.0114 9.82425 15.0114 10.1021C14.978 10.8635 14.9058 11.6194 14.8724 12.3697Z"
+                                      fill="#DA3250" />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_599_28269">
+                                      <rect width="27" height="27" fill="white" />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                                Payment failed!
+                              </span>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="Return">
+                            <div class="noreturnWrap">
+                              <span>
+                                <svg width="38" height="28" viewBox="0 0 38 28" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M33.9434 9.88348H3.93555V22.2962C3.93555 22.8882 4.36991 23.4106 5.00458 23.5809C8.01961 24.3888 16.4983 26.6626 18.5081 27.2017C18.7894 27.2768 19.0895 27.2768 19.3708 27.2017C21.3806 26.6626 29.8593 24.3888 32.8743 23.5809C33.509 23.4106 33.9434 22.8882 33.9434 22.2962C33.9434 19.1876 33.9434 9.88348 33.9434 9.88348Z"
+                                    fill="#CADCF0" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M33.9436 9.88348H18.9397C18.9397 9.88348 18.7941 27.258 18.9397 27.258C19.0852 27.258 19.23 27.2392 19.371 27.2017C21.3808 26.6626 29.8595 24.3888 32.8746 23.5809C33.5092 23.4106 33.9436 22.8882 33.9436 22.2962C33.9436 19.1876 33.9436 9.88348 33.9436 9.88348Z"
+                                    fill="#A4BBDB" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M18.9397 14.2345L3.93579 9.88348C3.93579 9.88348 1.30485 13.3702 0.128544 14.9285C-0.00349009 15.1035 -0.0357486 15.3227 0.0407713 15.5219C0.118041 15.721 0.294337 15.8759 0.518646 15.9416C3.36864 16.7691 11.8053 19.2191 14.0184 19.8615C14.3357 19.954 14.6838 19.8474 14.8714 19.6C15.8774 18.273 18.9397 14.2345 18.9397 14.2345Z"
+                                    fill="#E9F3FC" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M33.9434 9.88348L18.9395 14.2345C18.9395 14.2345 22.0018 18.273 23.0078 19.6C23.1953 19.8474 23.5434 19.954 23.8607 19.8615C26.0738 19.2191 34.5105 16.7691 37.3605 15.9416C37.5848 15.8759 37.7611 15.721 37.8384 15.5219C37.9149 15.3227 37.8826 15.1035 37.7506 14.9285C36.5743 13.3702 33.9434 9.88348 33.9434 9.88348Z"
+                                    fill="#E9F3FC" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.3079 0.743638C15.1204 0.497557 14.773 0.390944 14.4557 0.483476C12.2441 1.12516 3.80516 3.57591 0.95517 4.40401C0.730861 4.46905 0.553815 4.62394 0.477295 4.82308C0.400775 5.02223 0.433033 5.24216 0.565068 5.41649C1.64835 6.85275 3.9357 9.8835 3.9357 9.8835L18.9396 5.51774C18.9396 5.51774 16.2449 1.97538 15.3079 0.743638Z"
+                                    fill="#CADCF0" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M37.314 5.41649C37.446 5.24216 37.4783 5.02223 37.4018 4.82308C37.3252 4.62394 37.1482 4.46905 36.9239 4.40401C34.0739 3.57591 25.6349 1.12516 23.4234 0.483476C23.106 0.390944 22.7587 0.497557 22.5711 0.743638C21.6342 1.97538 18.9395 5.51774 18.9395 5.51774L33.9434 9.8835C33.9434 9.8835 36.2307 6.85275 37.314 5.41649Z"
+                                    fill="#E9F3FC" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M33.9434 9.88352L18.9395 5.51776L3.93555 9.88352L18.9395 14.2345L33.9434 9.88352Z"
+                                    fill="#CADCF0" />
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M18.9395 14.2345V5.51776L3.93555 9.88352L18.9395 14.2345Z" fill="#A4BBDB" />
+                                </svg>
+                                There haven’t been any returns.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12">
+                  <div class="TwillioWrap">
+                    <h4>Order Notes</h4>
+                    <div class="Twilliobody">
+                      <h2>Space for Twillio Integration</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="OrderDeataildWrapRight">
+              <div class="cardInner dis cuatomerdet">
+                <h3>Customer Details</h3>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                    <path
+                      d="M10.1075 6.95522C11.0673 6.25523 11.6923 5.12238 11.6923 3.84615C11.6923 1.72538 9.96691 0 7.84614 0C5.72537 0 3.99999 1.72538 3.99999 3.84615C3.99999 5.12238 4.62498 6.25523 5.58481 6.95522C3.19887 7.86826 1.5 10.1816 1.5 12.8846C1.5 14.051 2.44896 15 3.61538 15H12.0769C13.2433 15 14.1923 14.051 14.1923 12.8846C14.1923 10.1816 12.4934 7.86826 10.1075 6.95522ZM5.15385 3.84615C5.15385 2.36162 6.36161 1.15386 7.84614 1.15386C9.33067 1.15386 10.5384 2.36162 10.5384 3.84615C10.5384 5.33068 9.33067 6.53848 7.84614 6.53848C6.36161 6.53848 5.15385 5.33068 5.15385 3.84615ZM12.0769 13.8461H3.61538C3.0852 13.8461 2.65386 13.4148 2.65386 12.8846C2.65386 10.0215 4.98308 7.69228 7.84617 7.69228C10.7093 7.69228 13.0385 10.0215 13.0385 12.8846C13.0385 13.4148 12.6071 13.8461 12.0769 13.8461Z"
+                      fill="black" />
+                  </svg>
+                  <span class="customerName"> Kishan Mendapara</span>
+                </p>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M6.10465 0.75H6.08093C5.12442 0.75 4.37372 0.75 3.77093 0.798837C3.15698 0.849767 2.64977 0.953023 2.1907 1.18744C1.4358 1.57206 0.82206 2.1858 0.437442 2.9407C0.203023 3.39977 0.0997674 3.90698 0.0495349 4.52093C-1.55942e-08 5.12372 0 5.87442 0 6.83093V8.27372C0 9.23023 3.63866e-08 9.98093 0.0488372 10.5837C0.0997675 11.1977 0.203023 11.7049 0.437442 12.164C0.82206 12.9188 1.4358 13.5326 2.1907 13.9172C2.64977 14.1516 3.15698 14.2556 3.77093 14.3051C4.37372 14.3547 5.12442 14.3547 6.08093 14.3547H8.91907C9.87558 14.3547 10.6263 14.3547 11.2291 14.3058C11.843 14.2556 12.3502 14.1516 12.8093 13.9172C13.5642 13.5326 14.1779 12.9188 14.5626 12.164C14.797 11.7049 14.9009 11.1977 14.9505 10.5837C15 9.98093 15 9.23023 15 8.27372V6.83093C15 5.87442 15 5.12372 14.9512 4.52093C14.9009 3.90698 14.797 3.39977 14.5626 2.9407C14.1779 2.1858 13.5642 1.57206 12.8093 1.18744C12.3502 0.953023 11.843 0.849768 11.2291 0.799535C10.6263 0.75 9.87558 0.75 8.91907 0.75H6.10465ZM2.66512 2.11953C2.95256 1.97302 3.30698 1.88721 3.85605 1.84256C4.4114 1.79721 5.11884 1.79651 6.10465 1.79651H8.89535C9.88046 1.79651 10.5886 1.79651 11.144 1.84256C11.693 1.88721 12.0474 1.97372 12.3349 2.11953C12.8928 2.40397 13.3463 2.85775 13.6305 3.41581C13.777 3.70256 13.8628 4.05698 13.9074 4.60605C13.9528 5.1614 13.9535 5.86884 13.9535 6.85465V8.25C13.9535 9.23512 13.9535 9.94326 13.9074 10.4986C13.8628 11.0477 13.7763 11.4021 13.6305 11.6895C13.3462 12.2473 12.8927 12.7008 12.3349 12.9851C12.0474 13.1316 11.693 13.2174 11.144 13.2621C10.5886 13.3074 9.88116 13.3081 8.89535 13.3081H6.10465C5.11884 13.3081 4.4114 13.3081 3.85605 13.2621C3.30698 13.2174 2.95256 13.1309 2.66581 12.9851C2.10775 12.701 1.65397 12.2474 1.36953 11.6895C1.22302 11.4021 1.13721 11.0477 1.09256 10.4986C1.04721 9.94326 1.04651 9.23581 1.04651 8.25V6.85465C1.04651 5.86884 1.04651 5.1614 1.09256 4.60605C1.13721 4.05698 1.22372 3.70256 1.36953 3.41581C1.65385 2.85764 2.10694 2.40385 2.66512 2.11953ZM3.60419 4.32628C3.48871 4.25112 3.34826 4.22453 3.2133 4.2523C3.07835 4.28006 2.95979 4.35993 2.88337 4.47457C2.80694 4.58921 2.77881 4.72937 2.80509 4.86462C2.83137 4.99987 2.90993 5.11929 3.02372 5.19698L3.7214 5.66233L3.80233 5.71605C4.84814 6.41372 5.46977 6.82814 6.14163 7.03046C7.02755 7.29735 7.97245 7.29735 8.85837 7.03046C9.53023 6.82814 10.1519 6.41302 11.1977 5.71605L11.2786 5.66233L11.9763 5.19698C12.0343 5.15923 12.0842 5.11035 12.1232 5.05317C12.1622 4.99599 12.1894 4.93165 12.2034 4.86387C12.2173 4.79609 12.2177 4.72622 12.2044 4.6583C12.1912 4.59038 12.1646 4.52576 12.1262 4.46819C12.0878 4.41061 12.0384 4.36122 11.9808 4.32287C11.9232 4.28452 11.8586 4.25798 11.7906 4.24479C11.7227 4.23159 11.6528 4.23199 11.5851 4.24598C11.5173 4.25997 11.453 4.28726 11.3958 4.32628L10.6981 4.79163C9.54698 5.55907 9.0607 5.87651 8.55628 6.0286C7.86738 6.23609 7.13262 6.23609 6.44372 6.0286C5.9393 5.87651 5.45302 5.55907 4.30186 4.79163L3.60419 4.32628Z"
+                      fill="black" />
+                  </svg>
+                  <a class="customerEmail" href="mailto:kishan@designbabu.com">kishan@designbabu.com</a>
+                </p>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                    <path
+                      d="M3.78224 1.31182L4.65334 1.04981C5.13054 0.905917 5.64379 0.940556 6.09732 1.14727C6.55085 1.35398 6.91368 1.71864 7.1181 2.17321L7.7914 3.67058C7.96716 4.06157 8.0161 4.49777 7.93136 4.91799C7.84662 5.33821 7.63245 5.72136 7.3189 6.01367L6.20371 7.05347C6.17111 7.08385 6.15046 7.12489 6.14549 7.16917C6.11264 7.46551 6.31344 8.04251 6.77623 8.84493C7.11288 9.42791 7.41817 9.83771 7.67719 10.0669C7.85783 10.2274 7.95711 10.2617 7.99966 10.2497L9.50001 9.79068C9.90974 9.66535 10.3484 9.67138 10.7546 9.80792C11.1607 9.94446 11.5139 10.2047 11.7647 10.5521L12.7209 11.8777C13.0117 12.2809 13.1463 12.7758 13.0998 13.2707C13.0532 13.7656 12.8287 14.2268 12.4679 14.5687L11.8065 15.1957C11.4555 15.5281 11.0244 15.7639 10.5552 15.8802C10.086 15.9965 9.59463 15.9893 9.12903 15.8593C7.07332 15.2853 5.23035 13.5505 3.57921 10.6909C1.92583 7.82753 1.34585 5.36128 1.8803 3.29139C2.00061 2.82586 2.23881 2.39916 2.57194 2.05244C2.90507 1.70571 3.32189 1.45064 3.78224 1.31182ZM4.10545 2.38446C3.82932 2.46765 3.57927 2.62055 3.37937 2.82842C3.17948 3.03629 3.03647 3.29213 2.96414 3.5713C2.51478 5.31201 3.02908 7.49835 4.54884 10.1311C6.06636 12.76 7.70033 14.2977 9.43059 14.7814C9.70986 14.8592 10.0045 14.8634 10.2859 14.7935C10.5672 14.7237 10.8257 14.5822 11.0362 14.3828L11.6983 13.7558C11.8624 13.6004 11.9645 13.3907 11.9856 13.1657C12.0067 12.9407 11.9455 12.7156 11.8132 12.5324L10.8578 11.2074C10.7438 11.0493 10.5831 10.9309 10.3984 10.8688C10.2136 10.8067 10.0141 10.804 9.8277 10.8611L8.32361 11.3216C7.45027 11.5814 6.65755 10.879 5.8066 9.40477C5.23333 8.412 4.9661 7.64316 5.03254 7.04526C5.06762 6.73474 5.21168 6.4481 5.4401 6.23462L6.55528 5.19482C6.69787 5.06196 6.79528 4.88779 6.83384 4.69676C6.87239 4.50572 6.85016 4.3074 6.77026 4.12964L6.09697 2.63228C6.00405 2.42582 5.83923 2.26018 5.63323 2.16625C5.42723 2.07231 5.19411 2.05648 4.9773 2.12171L4.10545 2.38446Z"
+                      fill="#212121" />
+                  </svg>
+                  <a class="customerMobile" href="tel:964 123 4567">964 123 4567</a>
+                </p>
+              </div>
+              <div class="cardInner dis FraudAnalysis">
+                <h3>Fraud Analysis</h3>
+                <p class="userLocation">Location: <b>Bagdad, IQ</b></p>
+                <p class="userAddress">IP Address: <b>45.120.122.109</b></p>
+                <a href="javascript:void(0)">View Full Details</a>
+              </div>
+              <div class="cardInner dis ShippingAddress">
+                <h3>
+                  Shipping Address
+                  <a class="ShippingPopup" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <g opacity="0.2">
+                        <path
+                          d="M4.51162 17.7113C4.30362 17.7113 4.09602 17.6321 3.93718 17.4732C3.6199 17.156 3.6199 16.6416 3.93718 16.3244L16.6341 3.62743C16.951 3.31015 17.4657 3.31015 17.783 3.62743C18.1003 3.94471 18.1003 4.45902 17.783 4.7763L5.08605 17.4732C4.92762 17.6317 4.71962 17.7113 4.51162 17.7113Z"
+                          fill="#3777BC" />
+                        <path
+                          d="M3.25667 23.5625C3.2002 23.5625 3.14292 23.5564 3.08564 23.5442C2.64689 23.45 2.36739 23.0181 2.46164 22.5794L3.71695 16.7282C3.8112 16.2894 4.24508 16.0107 4.6818 16.1042C5.12055 16.1984 5.40005 16.6303 5.3058 17.069L4.05048 22.9202C3.96883 23.3017 3.63164 23.5625 3.25667 23.5625Z"
+                          fill="#3777BC" />
+                        <path
+                          d="M9.10732 22.3072C8.89932 22.3072 8.69173 22.228 8.53288 22.0691C8.2156 21.7519 8.2156 21.2376 8.53288 20.9203L21.2298 8.22374C21.5467 7.90646 22.0614 7.90646 22.3787 8.22374C22.696 8.54102 22.696 9.05533 22.3787 9.37261L9.68216 22.0691C9.52332 22.228 9.31532 22.3072 9.10732 22.3072Z"
+                          fill="#3777BC" />
+                        <path
+                          d="M3.25533 23.5625C2.88036 23.5625 2.54358 23.3017 2.46152 22.9202C2.36768 22.4814 2.64677 22.0496 3.08552 21.9553L8.93674 20.7C9.37589 20.607 9.80774 20.8857 9.90158 21.324C9.99543 21.7628 9.71633 22.1946 9.27758 22.2889L3.42636 23.5442C3.36908 23.5568 3.3118 23.5625 3.25533 23.5625Z"
+                          fill="#3777BC" />
+                        <path
+                          d="M19.506 11.9084C19.298 11.9084 19.09 11.8292 18.9315 11.6704L14.3356 7.07446C14.0183 6.75718 14.0183 6.24286 14.3356 5.92558C14.6525 5.6083 15.1676 5.6083 15.4845 5.92558L20.0804 10.5215C20.3977 10.8388 20.3977 11.3531 20.0804 11.6704C19.922 11.8292 19.714 11.9084 19.506 11.9084Z"
+                          fill="#3777BC" />
+                        <path
+                          d="M21.8046 9.61064C21.5966 9.61064 21.3886 9.53142 21.2298 9.37257C20.9125 9.05529 20.9125 8.54098 21.2298 8.22329C21.6819 7.77114 21.931 7.15892 21.931 6.49998C21.931 5.84104 21.6819 5.22882 21.2298 4.77667C20.7772 4.3241 20.165 4.07507 19.5061 4.07507C18.8471 4.07507 18.2349 4.3241 17.7827 4.77667C17.4659 5.09395 16.9516 5.09435 16.6335 4.77667C16.3162 4.45939 16.3162 3.94507 16.6335 3.62739C17.3923 2.8681 18.4124 2.45007 19.5061 2.45007C20.5993 2.45007 21.6198 2.8681 22.3787 3.62739C23.1379 4.38626 23.556 5.40635 23.556 6.49998C23.556 7.5936 23.1379 8.6137 22.3787 9.37257C22.2206 9.53101 22.0126 9.61064 21.8046 9.61064Z"
+                          fill="#3777BC" />
+                      </g>
+                    </svg>
+                  </a>
+                </h3>
+                <p>Kishan Mendapara <span>HOME</span></p>
+                <p>
+                  717 Mills Gardens, <br />
+                  Anbar-iraq
+                </p>
+                <a href="tel:964 123 4567">964 123 4567</a>
+              </div>
+              <div class="cardInner dis Timeline">
+                <h3>Timeline</h3>
+                <div class="Timeline-in">
+                  <div class="orangsignal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                      <circle cx="10" cy="10.5" r="10" fill="#FEC350" />
+                    </svg>
+                  </div>
+                  <div class="timelinetext">
+                    <span>10 /06/2023 9:21 AM </span>
+                    <p>Order Pending</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--**********************************
+            Content body end
+        ***********************************-->
+    <!--**********************************
+           Support ticket button start
+        ***********************************-->
+    <!--**********************************
+           Support ticket button end
+        ***********************************-->
+  </div>
+  <!--**********************************
+        Main wrapper end
+    ***********************************-->
+  <!--**********************************
+        Scripts
+    ***********************************-->
+  <!-- Required vendors -->
+  <script src="vendor/global/global.min.js"></script>
+  <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="vendor/chart-js/chart.bundle.min.js"></script>
+  <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script src="js/deznav-init.js"></script>
+  <!-- Datatable -->
+  <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="js/plugins-init/datatables.init.js"></script>
+  <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+  <!-- Daterangepicker -->
+  <script src="vendor/pickadate/picker.js"></script>
+  <script src="vendor/pickadate/picker.time.js"></script>
+  <script src="vendor/pickadate/picker.date.js"></script>
+  <!-- Pickdate -->
+  <script src="js/plugins-init/pickadate-init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
+  <script src="js/dashboard/dashboard-1.js"></script>
+  <script src="js/Theme.js"></script>
+  <script src="js/integration.js"></script>
+  <script>
+    // -----Country Code Selection
+    jQuery("#mobile_code").intlTelInput({
+      initialCountry: "in",
+      separateDialCode: true,
+      // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
+    });
+  </script>
+</body>
+
+</html>
